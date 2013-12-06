@@ -1,4 +1,11 @@
 
+//
+// parse-repo.h
+//
+// Copyright (c) 2013 Stephen Mathieson
+// MIT licensed
+//
+
 #ifndef __PARSE_REPO__
 #define __PARSE_REPO__ 1
 

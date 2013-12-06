@@ -1,4 +1,11 @@
 
+//
+// parse-repo.c
+//
+// Copyright (c) 2013 Stephen Mathieson
+// MIT licensed
+//
+
 #include <string.h>
 #include <stdlib.h>
 #include "parse-repo.h"
