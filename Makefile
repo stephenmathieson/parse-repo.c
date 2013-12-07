@@ -11,7 +11,11 @@ $(TESTS):
 	$(CC) $@ $(SRC) $(CFLAGS) -o $(basename $@)
 	./$(basename $@)
 
+example: example.c $(SRC)
+	$(CC) $^ $(CFLAGS) -o example
+
 clean:
+	rm -f example
 	$(foreach test, $(TESTS), rm -f $(basename $(test));)
 
 .PHONY: test $(TESTS) clean
