@@ -51,6 +51,10 @@ parsed_repo_t *parse_repo(const char *str) {
   } else {
     repo->owner = PARSE_REPO_DEFAULT_OWNER;
     repo->name = cpy;
+    repo->slug = malloc(sizeof(char)
+                        * strlen(repo->owner)
+                        + strlen(repo->name)
+                        + 1);
     sprintf(repo->slug, "%s/%s", repo->owner, repo->name);
   }
 
