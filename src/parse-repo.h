@@ -1,4 +1,3 @@
-
 //
 // parse-repo.h
 //
@@ -6,8 +5,8 @@
 // MIT licensed
 //
 
-#ifndef __PARSE_REPO__
-#define __PARSE_REPO__ 1
+#ifndef PARSE_REPO_H
+#define PARSE_REPO_H 1
 
 #define PARSE_REPO_DEFAULT_OWNER   "clibs"
 #define PARSE_REPO_DEFAULT_VERSION "master"
