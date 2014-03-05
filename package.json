@@ -1,6 +1,6 @@
 {
   "name": "parse-repo",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "repo": "stephenmathieson/parse-repo.c",
   "description": "Parse GitHub style repos",
   "keywords": [ "parse", "GitHub", "repo" ],
