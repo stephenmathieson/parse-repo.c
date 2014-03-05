@@ -7,11 +7,12 @@
   "license": "MIT",
   "src": [
     "src/parse-repo.c",
-    "src/parse-repo.h",
-    "deps/substr.c",
-    "deps/substr.h"
+    "src/parse-repo.h"
   ],
   "dependencies": {
-    "stephenmathieson/substr.c": "master"
+    "stephenmathieson/substr.c": "*"
+  },
+  "development": {
+    "stephenmathieson/describe.h": "*"
   }
 }

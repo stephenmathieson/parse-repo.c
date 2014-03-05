@@ -1,2 +1,6 @@
-test/test
+deps/
+test/name
 example
+*.o
+test/owner
+test/version

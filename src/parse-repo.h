@@ -1,26 +1,47 @@
+
 //
 // parse-repo.h
 //
-// Copyright (c) 2013 Stephen Mathieson
+// Copyright (c) 2014 Stephen Mathieson
 // MIT licensed
 //
 
 #ifndef PARSE_REPO_H
 #define PARSE_REPO_H 1
 
-#define PARSE_REPO_DEFAULT_OWNER   "clibs"
-#define PARSE_REPO_DEFAULT_VERSION "master"
+/**
+ * Parse the repo owner from the given slug.
+ *
+ * If no owner is provided and `DEFAULT_REPO_OWNER`
+ * is defined, will return a pointer to a copy of
+ * `DEFAULT_REPO_OWNER`.
+ *
+ * Free the result when you're done with it.
+ */
 
-typedef struct {
-  const char *owner;
-  const char *name;
-  const char *version;
-  char *slug;
-} parsed_repo_t;
+char *
+parse_repo_owner(const char *);
 
-parsed_repo_t *parse_repo(const char *str);
+/**
+ * Parse the repo name from the given slug.
+ *
+ * Free the result when you're done with it.
+ */
 
-void parse_repo_free(parsed_repo_t *repo);
+char *
+parse_repo_name(const char *);
 
+/**
+ * Parse the repo version from the given slug.
+ *
+ * If no version is provided and `DEFAULT_REPO_VERSION`
+ * is defined, will return a pointer to a copy of
+ * `DEFAULT_REPO_VERSION`.
+ *
+ * Free the result when you're done with it.
+ */
+
+char *
+parse_repo_version(const char *);
 
 #endif

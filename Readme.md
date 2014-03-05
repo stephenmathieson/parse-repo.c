@@ -1,29 +1,55 @@
 
 # parse-repo
 
+  Parse GitHub-style repo slugs.
+
 ## Installation
 
   Install with [clib(1)](https://github.com/clibs/clib):
 
     $ clib install stephenmathieson/parse-repo.c
 
-## Example
+## API
 
 ```c
-#include <stdio.h>
-#include "parse-repo.h"
 
-int main() {
-  char *repo = "stephenmathieson/parse-repo.c";
-  parsed_repo_t *parsed = parse_repo(repo);
-  printf("%s\n", repo);
-  printf("  name: %s\n", parsed->name);
-  printf("  owner: %s\n", parsed->owner);
-  printf("  version: %s\n", parsed->version);
-  parse_repo_free(parsed);
-  return 0;
-}
+/**
+ * Parse the repo owner from the given slug.
+ *
+ * If no owner is provided and `DEFAULT_REPO_OWNER`
+ * is defined, will return a pointer to a copy of
+ * `DEFAULT_REPO_OWNER`.
+ *
+ * Free the result when you're done with it.
+ */
+
+char *
+parse_repo_owner(const char *);
+
+/**
+ * Parse the repo name from the given slug.
+ *
+ * Free the result when you're done with it.
+ */
+
+char *
+parse_repo_name(const char *);
+
+/**
+ * Parse the repo version from the given slug.
+ *
+ * If no version is provided and `DEFAULT_REPO_VERSION`
+ * is defined, will return a pointer to a copy of
+ * `DEFAULT_REPO_VERSION`.
+ *
+ * Free the result when you're done with it.
+ */
+
+char *
+parse_repo_version(const char *);
+
 ```
+
 
 ## License
 
