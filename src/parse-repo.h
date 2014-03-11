@@ -11,8 +11,8 @@
 
 /**
  * Parse the repo owner from the given slug.  If
- * no owner is provided and `default != NULL`,
- * will return a copy of `default`.
+ * no owner is provided and `fallback != NULL`,
+ * will return a copy of `fallback`.
  *
  * Free the result when you're done with it.
  */
@@ -31,8 +31,8 @@ parse_repo_name(const char *);
 
 /**
  * Parse the repo version from the given slug.  If
- * no version is present and `default != NULL`,
- * will return a copy of `default`.
+ * no version is present and `fallback != NULL`,
+ * will return a copy of `fallback`.
  *
  * Free the result when you're done with it.
  */
