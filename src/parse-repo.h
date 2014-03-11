@@ -10,17 +10,15 @@
 #define PARSE_REPO_H 1
 
 /**
- * Parse the repo owner from the given slug.
- *
- * If no owner is provided and `DEFAULT_REPO_OWNER`
- * is defined, will return a pointer to a copy of
- * `DEFAULT_REPO_OWNER`.
+ * Parse the repo owner from the given slug.  If
+ * no owner is provided and `default != NULL`,
+ * will return a copy of `default`.
  *
  * Free the result when you're done with it.
  */
 
 char *
-parse_repo_owner(const char *);
+parse_repo_owner(const char *, const char *);
 
 /**
  * Parse the repo name from the given slug.
@@ -32,16 +30,14 @@ char *
 parse_repo_name(const char *);
 
 /**
- * Parse the repo version from the given slug.
- *
- * If no version is provided and `DEFAULT_REPO_VERSION`
- * is defined, will return a pointer to a copy of
- * `DEFAULT_REPO_VERSION`.
+ * Parse the repo version from the given slug.  If
+ * no version is present and `default != NULL`,
+ * will return a copy of `default`.
  *
  * Free the result when you're done with it.
  */
 
 char *
-parse_repo_version(const char *);
+parse_repo_version(const char *, const char *);
 
 #endif

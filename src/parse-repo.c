@@ -14,7 +14,7 @@
 #include "parse-repo.h"
 
 char *
-parse_repo_owner(const char *slug) {
+parse_repo_owner(const char *slug, const char *fallback) {
   char *copy = NULL;
   char *owner = NULL;
 
@@ -34,11 +34,9 @@ parse_repo_owner(const char *slug) {
     return tmp;
   }
 
-  #ifdef DEFAULT_REPO_OWNER
-    if (0 < strlen(copy) && '@' != copy[0]) {
-      owner = str_copy(DEFAULT_REPO_OWNER);
-    }
-  #endif
+  if (fallback && 0 < strlen(copy) && '@' != copy[0]) {
+    owner = str_copy(fallback);
+  }
 
   free(copy);
   return owner;
@@ -81,7 +79,7 @@ parse_repo_name(const char *slug) {
 }
 
 char *
-parse_repo_version(const char *slug) {
+parse_repo_version(const char *slug, const char *fallback) {
   // malformed slugs
   if (NULL == slug) return NULL;
   if (0 == strlen(slug)) return NULL;
@@ -100,10 +98,6 @@ parse_repo_version(const char *slug) {
   }
 
   version = NULL;
-
-  #ifdef DEFAULT_REPO_VERSION
-    version = str_copy(DEFAULT_REPO_VERSION);
-  #endif
-
+  if (fallback) version = str_copy(fallback);
   return version;
 }
