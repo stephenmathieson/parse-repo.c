@@ -1,4 +1,11 @@
 
+1.1.0 / 2014-03-11
+==================
+
+ * Add valgrind target
+ * Change `DEFAULT_REPO_*` to a fallback argument
+ * Remove example
+
 1.0.0 / 2014-03-05
 ==================
 
